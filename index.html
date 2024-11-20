@@ -6,36 +6,54 @@
     <title>Ветеринарная клиника</title>
 </head>
 <body>
-    <header>
-        <img src="images/logo.jpg" alt="" width="170">
-        <h1>Ветклиника</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главное</a></li>
-                <li><a href="catalog.html">Каталог услуг</a></li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="#">Наши врачи</a></li>
+    <header class="header">
+        <img class="header__logo" src="images/logo.jpg" alt="" width="170">
+        <h1 class="header__title">Ветклиника</h1>
+        <nav class="header__menu">
+            <ul class="menu">
+                <li class="menu__item menu__item--active">
+                    <a class="menu__link" href="index.html">Главное</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="catalog.html">Каталог услуг</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link" href="#">Отзывы</a>
+                </li>
             </ul>
         </nav>
-        <a href="#">Вход</a>
-        <a href="#">Регистрация</a>
+        <a class="header__button" href="#">Вход</a>
+        <a class="header__button" href="#">Регистрация</a>
     </header>
 
-    <main>
-        <div>
-            <h2>Услуги</h2>
-            <div>
-                <img src="images/1.jpg" alt="" width="300">
-                <p>Осмотр животного</p>
+    <main class="main">
+        <div class="about-us">
+            <h2>Почему именно наша ветклиника?</h2>
+            <p>Наша ветклиника предлагает широкий спектр услуг, высокое качество обслуживания и индивидуальнай подход к каждому пациенту</p>
+            <img src="images/animals.jpg" alt="" width="300">
+        </div>
+        <div class="services">
+            <h2 class="services__title">Услуги</h2>
+            <div class="services__card">
+                <img class="services__image" src="images/1.jpg" alt="" width="300">
+                <p class="services__name">Осмотр животного</p>
             </div>
-            <div>
-                <img src="images/2.jpeg" alt="" width="300">
-                <p>УЗИ для животного</p>
+            <div class="services__card">
+                <img class="services__image" src="images/2.jpeg" alt="" width="300">
+                <p class="services__name">УЗИ для животного</p>
+            </div>
+            <div class="doctors">
+                <h2 class="doctors__title">Наши врачи</h2>
+                <div class="doctors__card">
+                    <img class="doctors_image" src="images/vetdoctor1.jpg" alt="Фото врача" width="150">
+                    <p class="doctors__name">Людмила Николаевна</p>
+                    <p class="doctors__desc">Врач-диетолог</p>
+                </div>
             </div>
         </div>
     </main>
-    <footer>
-        Подвал
+    <footer class="footer">
+        <p>Сайт создан тем-то</p>
     </footer>
 </body>
 </html>
