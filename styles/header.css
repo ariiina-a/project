@@ -1,0 +1,7 @@
+.header{
+    background-color: rgb(255, 255, 255);
+    color: lightblue;
+}
+.header__title{
+    font-size: 45px;
+}
