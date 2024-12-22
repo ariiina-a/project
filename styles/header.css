@@ -5,3 +5,9 @@
 .header__title{
     font-size: 45px;
 }
+.menu{
+    line-height: 1.2;
+}
+.header__button {
+    line-height: 0.2;
+   }

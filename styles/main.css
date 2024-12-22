@@ -9,3 +9,22 @@
 .reviews__name{
 font-size: 15px;
 }
+.doctors__name{
+font-size: 25px;
+font-weight: bold;
+}
+.services__name{
+    line-height: 1;
+}
+.reviews__name {
+    line-height: 60%;
+   }
+.reviews__desk {
+    line-height: 1;
+   }
+.doctors__name {
+    line-height: 10%;
+   }
+.doctors__desk {
+    line-height: 0.1;
+   }
