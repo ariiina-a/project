@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header class="header">
-        <img class="header__logo" src="images/logo.jpg" alt="" width="170">
+    <header class="header container">
+    <a class="header__logo-wrap" href="index.html">
+        <img class="header__logo" src="images/logo.jpg" alt="" width="120">
         <h1 class="header__title">Ветеринарная клиника "Мягкие лапки"</h1>
+    </a>
+        <div class="header__buttons">
+            <a class="header__button" href="#">Вход</a>
+            <a class="header__button" href="#">Регистрация</a>
+        </div>
         <nav class="header__menu">
             <ul class="menu">
                 <li class="menu__item menu__item--active">
@@ -22,20 +28,31 @@
                 <li class="menu__item--reviews">
                     <a class="menu__link" href="#">Отзывы</a>
                 </li>
+                <li class="menu__item--contacts">
+                    <a class="menu__link" href="contacts.html">Контакты</a>
+                </li>
+                <li class="menu__item--booking">
+                    <a class="menu__link" href="booking.html">Запись на приём</a>
+                </li>
             </ul>
         </nav>
-        <a class="header__button" href="#">Вход</a>
-        <a class="header__button" href="#">Регистрация</a>
+        
     </header>
 
-    <main class="main">
-        <div class="about-us">
-            <h2>Почему именно наша ветклиника?</h2>
-            <p>Наша ветклиника предлагает широкий спектр услуг, высокое качество обслуживания и индивидуальнай подход к каждому пациенту</p>
+    <main class="main container">
+    <section class="about">
+        <div class="about__wrap-left">
+            <h2>О нас</h2>
+            <p>Наша ветеринарная клиника отличается высоким качеством обслуживания, <br>
+            профессиональным подходом врачей и комфортными условиями для животных и их владельцев.</p>
+        </div>
+        <div class="about__wrap-right">
             <img src="images/animals.jpg" alt="" width="300">
         </div>
+    </section>
         <div class="services">
             <h2 class="services__title">Услуги</h2>
+            <div class="services__list">
             <div class="services__card">
                 <img class="services__image" src="images/1.jpg" alt="" width="300">
                 <p class="services__name">Терапия</p>
@@ -108,80 +125,81 @@
                 <img class="services__image" src="images/16.jpg" alt="" width="300">
                 <p class="services__name">Вызов врача на дом</p>
             </div>
+            </div>
             <section class="reviews">
                 <h2 class="reviews__title">Отзывы</h2>
-                <div class="reviews__card">
-                    <p class="reviews__name">Наталья Мельникова</p>
-                    <p class="reviews__desk">Отличная клиника!!! <br>
-                       Добрые,компетентные,внимательные врачи. <br>
-                       Огромная вам благодарность и признательность <br>
-                       за профессионализм и любовь к животным. <br> 
-                       Наша немецкая овчарка наблюдается и лечится <br>
-                       только у вас.
-                       <br>Спасибо большое за работу.</p>
-                       </div>
+                <div class="reviews__list">
+                    <div class="reviews__card">
+                        <p class="reviews__name">Наталья Мельникова</p>
+                        <p class="reviews__desc">Отличная клиника!!! <br>
+                            Добрые,компетентные,внимательные врачи. Огромная вам благодарность и признательность за профессионализм и любовь к животным. <br> 
+                            Наша немецкая овчарка наблюдается и лечится только у вас.
+                            <br>Спасибо большое за работу.</p>
+                    </div>
                     <div class="reviews__card">
                     <p class="reviews__name">Михаил Лебедев</p>
-                    <p class="reviews__desk">Принес найденную на улице кошку, 
+                    <p class="reviews__desc">Принес найденную на улице кошку, 
                        <br> проконсультировали, кошку взяли в приют.
                        <br> И через два дня позвонили, сообщили, что ее пристроили, 
-                       <br> прислали фотографии с новыми хозяевами. 
+                       прислали фотографии с новыми хозяевами. 
                        <br> Огромная благодарность, что с душой подходите к своей работе.</p>
                        </div>
                        <div class="reviews__card">
                        <p class="reviews__name">Дарья Зайцева</p>
-                    <p class="reviews__desk">Были проездом из другого города, 
+                    <p class="reviews__desc">Были проездом из другого города, 
                        <br> срочно потребовалась помощь собаке. 
-                       <br> Очень отзывчивые и доброжелательные работники. 
-                       <br> Приняли очень быстро, дали рекомендации. 
+                       Очень отзывчивые и доброжелательные работники. Приняли очень быстро, дали рекомендации. 
                        <br> Большое человеческое спасибо!</p>
                     </div>
+                </div>
             </section>
             <div class="doctors">
                 <h2 class="doctors__title">Наши врачи</h2>
-                <div class="doctors__card">
-                    <img class="doctors__image" src="images/d1.jpg" alt="" width="250">
-                    <p class="doctors__name">Логинова Мария Игоревна</p>
-                    <p class="doctors__desc">Главный врач клиники, хирург,
-                        <br> офтальмолог, кардиолог,терапевт,
-                        <br> ортопед, врач УЗИ, постоянный
-                        <br> участник российских и 
-                        <br> международных конференций
-                    </p>
-                </div>
-                <div class="doctors__card">
-                    <img class="doctors__image" src="images/d2.jpg" alt="" width="250">
-                    <p class="doctors__name">Сергеева Виктория Викторовна</p>
-                    <p class="doctors__desc">Врач-дерматолог, терапевт, 
-                       <br> онкоцитолог, врач УЗИ, эндокринолог,
-                       <br> лабораторная диагностика</p>
-                </div>
-                <div class="doctors__card">
-                    <img class="doctors__image" src="images/d3.jpg" alt="" width="250">
-                    <p class="doctors__name">Заболотских Людмила Николаевна</p>
-                    <p class="doctors__desc">Врач-терапевт, анестезиолог, диетолог</p>
-                </div>
-                <div class="doctors__card">
-                    <img class="doctors__image" src="images/d4.jpg" alt="" width="250">
-                    <p class="doctors__name">Смирнова Варвара Евгеньевна</p>
-                    <p class="doctors__desc">Врач-терапевт, лаборант, специалист
-                    <br> по экзотическим животным</p>
-                </div>
-                <div class="doctors__card">
-                    <img class="doctors__image" src="images/d5.jpg" alt="" width="250">
-                    <p class="doctors__name">Емельянова Анна Артемовна</p>
-                    <p class="doctors__desc">Врач общей практики. Лечение всех
-                    <br> внутренних болезней животных
-                    <br> (гастроэнтерология, нефрология,
-                    <br> пульмонология, инфекционные
-                    <br> болезни, гематология, базовая
-                    <br> неврология, оказание экстренной
-                    <br> помощи)</p>
+                <div class="doctors__list">
+                    <div class="doctors__card">
+                        <img class="doctors__image" src="images/d1.jpg" alt="" width="250">
+                        <p class="doctors__name">Логинова Мария Игоревна</p>
+                        <p class="doctors__desc">Главный врач клиники, хирург,
+                            <br> офтальмолог, кардиолог,терапевт,
+                            <br> ортопед, врач УЗИ, постоянный
+                            <br> участник российских и 
+                            <br> международных конференций
+                        </p>
+                    </div>
+                    <div class="doctors__card">
+                        <img class="doctors__image" src="images/d2.jpg" alt="" width="250">
+                        <p class="doctors__name">Сергеева Виктория Викторовна</p>
+                        <p class="doctors__desc">Врач-дерматолог, терапевт, 
+                            <br> онкоцитолог, врач УЗИ, эндокринолог,
+                            <br> лабораторная диагностика</p>
+                    </div>
+                    <div class="doctors__card">
+                        <img class="doctors__image" src="images/d3.jpg" alt="" width="250">
+                        <p class="doctors__name">Заболотских Людмила Николаевна</p>
+                        <p class="doctors__desc">Врач-терапевт, анестезиолог, диетолог</p>
+                    </div>
+                    <div class="doctors__card">
+                        <img class="doctors__image" src="images/d4.jpg" alt="" width="250">
+                        <p class="doctors__name">Смирнова Варвара Евгеньевна</p>
+                        <p class="doctors__desc">Врач-терапевт, лаборант, специалист
+                            <br> по экзотическим животным</p>
+                    </div>
+                    <div class="doctors__card">
+                        <img class="doctors__image" src="images/d5.jpg" alt="" width="250">
+                        <p class="doctors__name">Емельянова Анна Артемовна</p>
+                        <p class="doctors__desc">Врач общей практики. Лечение всех
+                            <br> внутренних болезней животных
+                            <br> (гастроэнтерология, нефрология,
+                            <br> пульмонология, инфекционные
+                            <br> болезни, гематология, базовая
+                            <br> неврология, оказание экстренной
+                            <br> помощи)</p>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="footer">
+    <footer class="footer container">
         <p class="footer__autor"> Дудина Арина и Зайцева Любовь группа ВТ-21</p>
     </footer>
 </body>

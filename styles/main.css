@@ -1,10 +1,10 @@
-.about-us{
+.about{
     background-color: white;
     color: rgb(38, 57, 92);
 }
-.reviews__desk{
-    background-color: white;
-    color: gray;
+.reviews__desc{
+    background-color: aliceblue;
+    color: rgb(48, 47, 47);
 }
 .reviews__name{
 font-size: 15px;
@@ -18,13 +18,112 @@ font-weight: bold;
 }
 .reviews__name {
     line-height: 60%;
-   }
-.reviews__desk {
+}
+.reviews__desc {
     line-height: 1;
-   }
+}
 .doctors__name {
-    line-height: 10%;
-   }
-.doctors__desk {
-    line-height: 0.1;
-   }
+    line-height: 100%;
+}
+.doctors__desc {
+    line-height: 100%;
+}
+.about{
+    display: flex;
+    gap: 10px;
+}
+.about__wrap-right{
+    width: 450px;
+    flex-shrink: 0;
+}
+.about{
+    background-color: rgb(62, 120, 167);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.doctors__card{
+    width: 350px;
+    padding: 15px;
+    background-color: aliceblue;
+    color: black;
+    box-shadow: 1px 2px 20px 5px #d7d7d7;
+}
+.doctors__name{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.doctors__desc{
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+.doctors__list {
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+.doctors__image{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+.reviews__card{
+    width: 350px;
+    padding: 15px;
+    background-color: aliceblue;
+   color: black;
+    box-shadow: 1px 2px 20px 5px #d7d7d7;
+}
+.reviews__name{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.reviews__desc{
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+.reviews__list {
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+.services__card{
+    width: 250px;
+    padding: 15px;
+    background-color: white;
+    color: black;
+    box-shadow: 1px 2px 20px 5px #d7d7d7;
+}
+.services__name{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.services__list {
+    margin: 0;
+    padding: 20px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+.services__image{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
