@@ -1,19 +1,39 @@
-.header__logo-wrap{
+.header__logo-wrap {
     background-color: rgb(255, 255, 255);
     color: rgb(125, 165, 179);
 }
-.header__title{
+
+.header__title {
     font-size: 45px;
 }
-.menu{
+
+.menu {
     line-height: 1.2;
 }
+
 .header__button {
     line-height: 0.2;
 }
-.menu__item--booking{
+
+.header__button {
+    transition: background-color 0.3s,
+        color 0.3s;
+}
+
+.header__button:hover {
+    background-color: #bdb9f0;
+    color: #f6f6fc;
+}
+
+.header__button:active {
+    background-color: #7b85a5;
+    color: #f5f4f8;
+}
+
+.menu__item--booking {
     text-transform: uppercase;
 }
+
 .menu {
     margin: 0;
     padding: 0;
@@ -21,7 +41,8 @@
     display: flex;
     flex-wrap: wrap;
 }
-.menu__link{
+
+.menu__link {
     display: block;
     padding: 10px;
     margin: 5px;
@@ -29,27 +50,46 @@
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
-.header__button{
+
+.menu__link {
+    transition: background-color 0.3s color 0.3s;
+}
+
+.menu__link:hover {
+    background-color: rgb(121, 160, 218);
+    color: rgb(252, 252, 252);
+}
+
+.menu__link:active {
+    background-color: #285385c5;
+    color: #f5f4f8;
+}
+
+.header__button {
     display: inline-block;
     padding: 10px;
     margin: 5px;
     background-color: rgb(95, 103, 110);
     color: rgb(255, 255, 255);
     text-decoration: none;
-} 
-.header__logo-wrap{
+}
+
+.header__logo-wrap {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-.header__logo-wrap{
+
+.header__logo-wrap {
     text-decoration: none;
     color: rgb(0, 80, 121);
 }
-.header__title{
+
+.header__title {
     margin: 0;
 }
-.header{
+
+.header {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -57,8 +97,7 @@
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.header__menu{
+
+.header__menu {
     width: 100%;
-    flex-shrink: 0;
 }
-   
