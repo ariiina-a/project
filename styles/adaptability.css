@@ -1,0 +1,41 @@
+@media only screen and (max-width: 768px) {
+
+    /* Base */
+   .container {
+    max-width: 100%;
+   } 
+
+   .services__list {
+    flex-wrap: wrap;
+   }
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+    } 
+    
+       .services__list {
+        flex-wrap: wrap;
+    }
+}
+
+    /* Typography */
+     .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .button {
+        min-height: 50px;
+
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .scroll-up {
+        right: 40px;
+
+        width: 50px;
+        height: 50px;
+    }
