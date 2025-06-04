@@ -25,7 +25,7 @@ let currentIndex = 0; // индекс карточек
 const slider = document.querySelectorAll(".doctors__card");
 const prevButton = document.querySelector(".doctors__left");
 const nextButton = document.querySelector(".doctors__right");
-const visibleCards = 3; // количество отображаемых карточек
+const visibleCards = 2; // количество отображаемых карточек
 updateSlider();
 
 prevButton.addEventListener("click", () => {
@@ -56,3 +56,34 @@ function updateSlider() {
     }
 });
 }
+
+// Получаем элементы DOM
+const modalOverlay = document.getElementById('modalOverlay');
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.querySelector('.modal-close-btn');
+
+// Открытие модального окна
+openModalBtn.addEventListener('click', () => {
+  modalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+});
+
+// Закрытие модального окна
+function closeModal() {
+  modalOverlay.classList.remove('active');
+  document.body.style.overflow = ''; // Восстанавливаем скролл
+}
+
+closeModalBtn.addEventListener('click', closeModal);
+
+// Закрытие при клике вне окна
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) closeModal();
+});
+
+// Закрытие по клавише Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+    closeModal();
+  }
+});

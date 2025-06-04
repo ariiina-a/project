@@ -3,6 +3,14 @@
     color: rgb(38, 57, 92);
 }
 
+.header__button {
+    border-radius: 2px;
+}
+
+.menu__link {
+    border-radius: 2px;
+}
+
 .reviews__desc {
     background-color: aliceblue;
     color: rgb(48, 47, 47);
@@ -40,15 +48,29 @@
 .about {
     display: flex;
     gap: 10px;
+    border-radius: 4px;
+}
+
+.about__text {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.about__image {
+    position: relative;
+    left: 50px;
+    width: 300px;
+    margin-top: 25px;
+    border-radius: 4px;
 }
 
 .about__wrap-right {
-    width: 450px;
+    width: 45%;
     flex-shrink: 0;
 }
 
 .about__wrap-left {
-    width: 70%;
+    width: 52%;
     flex-shrink: 0;
 }
 
@@ -59,11 +81,12 @@
 }
 
 .doctors__card {
-    width: 30%;
+    width: 300px;
     padding: 15px;
     background-color: aliceblue;
     color: black;
     box-shadow: 1px 2px 20px 5px #d7d7d7;
+    border-radius: 5px;
 }
 
 .doctors__name {
@@ -83,7 +106,7 @@
 .doctors__list {
     width: 100%;
     margin: auto;
-    padding: 20px 0;
+    padding: 10px 0;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -93,16 +116,17 @@
 
 .doctors__image {
     width: 100%;
-    height: 500px;
+    height: 400px;
     object-fit: cover;
 }
 
 .reviews__card {
-    width: 350px;
+    width: 235px;
     padding: 15px;
     background-color: aliceblue;
     color: black;
     box-shadow: 1px 2px 20px 5px #d7d7d7;
+    border-radius: 5px;
 }
 
 .reviews__name {
@@ -111,6 +135,7 @@
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+    line-height: 17px;
 }
 
 .reviews__desc {
@@ -135,6 +160,7 @@
     background-color: white;
     color: black;
     box-shadow: 1px 2px 20px 5px #d7d7d7;
+    border-radius: 5px;
 }
 
 .services__card {
@@ -184,9 +210,12 @@
 }
 
 .doctors__button {
-    width: 8%;
+    width: 10%;
     margin: auto;
     display: flex;
+    border: none;
+    cursor: pointer;
+    border: none;
 }
 
 .doctors__left {

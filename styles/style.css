@@ -7,5 +7,7 @@
 /* Подключение стилей относящихся к footer */
 @import "footer.css";
 /* Подключение стилей относящихся к main */
+
 @import "main.css";
 @import "media.css";
+@import "modal.css";

@@ -43,8 +43,8 @@
     <section class="about">
         <div class="about__wrap-left">
             <h2 class="about__titul">О нас</h2>
-            <p class="about__text">Наша ветеринарная клиника отличается высоким качеством обслуживания, <br>
-            профессиональным подходом врачей и комфортными условиями для животных и их владельцев.</p>
+            <p class="about__text">Наша ветеринарная клиника отличается </br> высоким качеством обслуживания, </br>
+            профессиональным подходом врачей </br> и комфортными условиями </br> для животных и их владельцев.</p>
         </div>
         <div class="about__wrap-right">
             <img class="about__image" src="images/animals.jpg" alt="главное изображение" width="300" height="250">
@@ -126,13 +126,23 @@
                 <p class="services__name">Вызов врача на дом</p>
             </div>
             </div>
+
+<!-- Секция с контентом и кнопкой -->
+<section class="modal-section">
+  <div class="container">
+    <h2>Запишитесь на прием <br> прямо сейчас</h2>
+    <button class="modal-open-btn" id="openModalBtn">Запись</button>
+  </div>
+  <img class="modal_img" src="images/vet.png" alt="" width="450px">
+</section>
+
             <section class="reviews">
                 <h2 class="reviews__title">Отзывы</h2>
                 <div class="reviews__list">
                     <div class="reviews__card">
-                        <p class="reviews__name">Наталья Мельникова</p>
+                        <p class="reviews__name">Наталья Михина</p>
                         <p class="reviews__desc">Отличная клиника!!! <br>
-                            Добрые,компетентные,внимательные врачи. Огромная вам благодарность и признательность за профессионализм и любовь к животным. <br> 
+                            Добрые,компетентные, <br> внимательные врачи. <br> Огромная вам благодарность и признательность за профессионализм и любовь к животным. <br> 
                             Наша немецкая овчарка наблюдается и лечится только у вас.
                             <br>Спасибо большое за работу.</p>
                     </div>
@@ -148,7 +158,7 @@
                        <p class="reviews__name">Дарья Зайцева</p>
                     <p class="reviews__desc">Были проездом из другого города, 
                        <br> срочно потребовалась помощь собаке. 
-                       Очень отзывчивые и доброжелательные работники. Приняли очень быстро, дали рекомендации. 
+                       <br> Очень отзывчивые и доброжелательные работники. <br> Приняли очень быстро, дали рекомендации. 
                        <br> Большое человеческое спасибо!</p>
                     </div>
                 </div>
@@ -199,18 +209,66 @@
         </ul>
         <div class="doctors__button">
             <button class="doctors__left">
-                <img src="images/лево.jpg" alt="" class="doctors__left-swiper">
+                <img src="images/left.jpg" alt="" class="doctors__left-swiper">
             </button>   
             <button class="doctors__right">
-            <img src="images/право.jpg" alt="" class="doctors__right-swiper">
+            <img src="images/right.jpg" alt="" class="doctors__right-swiper">
             </button>
         </div>
         </div>
     </main>
     <footer class="footer container">
-        <p class="footer__autor"> Дудина Арина и Зайцева Любовь группа ВТ-21</p>
+        <p class="footer__autor"> Дудина Арина и Зайцева Любовь <br> Группа ВТ-21 <br> 2025</p>
     </footer>
-    
+
+<!-- Модальное окно -->
+<div class="modal-overlay" id="modalOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <section class="modal__application">
+        <div class="modal-window">
+            <button class="modal-close-btn" aria-label="Закрыть модальное окно">&times;</button>
+            <h3 id="modalTitle">Запись на прием</h3>
+            
+            <form action="/" class="modal__form" method="post">
+                <div class="input-group">
+                    <input class="modal__input" 
+                           type="text" 
+                           id="userName"
+                           name="name"
+                           placeholder="Имя"
+                           required
+                           aria-required="true">
+                    <label for="userName" class="visually-hidden">Имя</label>
+                </div>
+                
+                <div class="input-group">
+                    <input class="modal__input" 
+                           type="tel" 
+                           id="userPhone"
+                           name="phone"
+                           placeholder="Телефон"
+                           required
+                           aria-required="true"
+                           pattern="[\+]\d{1}\s?[\(]\d{3}[\)]\s?\d{3}[\-]\d{2}[\-]\d{2}">
+                    <label for="userPhone" class="visually-hidden">Телефон</label>
+                </div>
+                
+                <div class="input-group">
+                    <input class="modal__input" 
+                           type="email" 
+                           id="userEmail"
+                           name="email"
+                           placeholder="E-mail"
+                           required
+                           aria-required="true">
+                    <label for="userEmail" class="visually-hidden">E-mail</label>
+                </div>
+                
+                <button type="submit" class="modal-action-btn">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
+</div>
+
     <script src="scripts/script.js"></script>
 </body>
 
