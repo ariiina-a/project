@@ -1,0 +1,26 @@
+[
+    {
+        "images": "/images/surgeon.jpg",
+        "iconAlt": "Вакансия 1",
+        "iconWeight": 387,
+        "iconHeight": 236,
+        "title": "Хирург",
+        "description": "Заработная плата от 45 000 тыс.руб."
+    },
+    {
+        "images": "images/admin.png",
+        "iconAlt": "Вакансия 2",
+        "iconWeight": 387,
+        "iconHeight": 236,
+        "title": "Администратор",
+        "description": "Заработная плата от 25 000 тыс.руб."
+    },
+    {
+        "images": "images/assist.png",
+        "iconAlt": "Вакансия 3",
+        "iconWeight": 387,
+        "iconHeight": 236,
+        "title": "Ассистент ветеринарного врача",
+        "description": "Заработная плата от 25 000 тыс.руб."
+    }
+]
