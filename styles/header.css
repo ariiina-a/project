@@ -12,25 +12,6 @@
     line-height: 1.2;
 }
 
-.header__button {
-    line-height: 0.2;
-}
-
-.header__button {
-    transition: background-color 0.3s,
-        color 0.3s;
-}
-
-.header__button:hover {
-    background-color: #bdb9f0;
-    color: #f6f6fc;
-}
-
-.header__button:active {
-    background-color: #7b85a5;
-    color: #f5f4f8;
-}
-
 .menu__item--booking {
     text-transform: uppercase;
 }

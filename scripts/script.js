@@ -110,6 +110,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     });
 
+    /* Динамический вывод карточек тегов */
+    const servicesContainer = document.querySelector(".services");
+    if (servicesContainer) {
+        const dataTitleServices= [
+            "Терапия",
+            "Дерматология",
+            "УЗИ кошек и собак",
+            "Лабораторные исследования",
+            "Рентген",
+            "Стоматология",
+            "Хирургия",
+            "Травматология",
+            "Кардиология",
+            "Онкология",
+            "Офтальмология",
+            "Вакцинация кошек и собак",
+            "Чипирование животных",
+            "Кастрация и стерилизация",
+            "Груминг",
+            "Стационар",
+            "Ритуальные услуги",
+            "Вызов врача на дом",
+        ];
+
+        const titleCards = 
+            servicesContainer.querySelectorAll(".services__name");
+            
+            titleCards.forEach((item, index) => {
+                item.textContent = dataTitleServices[index];
+            });
+    }
+                 
 
     const scrollUpButton = document.querySelector('.scroll-up');
 
