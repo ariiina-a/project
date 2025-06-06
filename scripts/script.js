@@ -169,6 +169,46 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    // Динамический вывод навигационного меню
+    const headerMenu = document.querySelector('.header__menu');
+    if (headerMenu){
+        const headerList = headerMenu.querySelector('.menu')
+        const menuData = {
+            link1: {
+                link: 'index.html',
+                title: 'Главное'
+            },
+            link2: {
+                link: 'catalog.html',
+                title: 'Каталог услуг'
+            },
+            link3: {
+                link: '#',
+                title: 'Отзывы'
+            },
+            link4: {
+                link: '#',
+                title: 'Контакты'
+            },
+            link5: {
+                link: '#goto',
+                title: 'Запись на приём'
+            },
+        }
+        const createLink = ( UrlLink, title) =>{
+            const link = `
+            <li class="menu__item"><a href="${UrlLink}" class="menu__link">${title}</a></li>
+            `;
+            return link;
+        }
+        for (const linkItem in menuData) {
+        const link = menuData[linkItem];
+        const linkIndex = createLink(link.UrlLink, link.title);
+        headerList.insertAdjacentHTML ('beforeend', linkIndex);
+        
+        }
+    }
+
 });
 
 
