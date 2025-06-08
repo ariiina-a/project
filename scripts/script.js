@@ -190,10 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 link: '#',
                 title: 'Контакты'
             },
-            link5: {
-                link: '#goto',
-                title: 'Запись на приём'
-            },
         }
         const createLink = ( UrlLink, title) =>{
             const link = `
@@ -208,56 +204,55 @@ document.addEventListener("DOMContentLoaded", () => {
         
         }
     }
+})
 
-    const cardsCon = document.querySelector(".job");
-    if (cardsCon) {
-        const cardList = cardsCon.querySelector(".job__list");
+    /* Лекция 6 */
+    const cardsContainer = document.querySelector('.job');
+    if (cardsContainer) {
+        const cardList = cardsContainer.querySelector('.job__list');
 
         // Пример URL для получения данных с сервера
-        const apiUrl = "data.json";
+        const apiUrl = 'data.json';
 
         // Функция для создания карточки
-        const createCard = (
-            imageUrl,
-            iconAlt,
-            iconWidth,
-            iconHeight,
-            title,
-            description
-        ) => {
+        const createCard = (imageUrl, iconAlt, iconWidth, iconHeight, title, description) => {
+
             // Шаблонные строки и подстановки
             const card = `
-                <li class="job__item" href="#">
-                      <img class="job__img" src="${imageUrl}" alt="${iconAlt}" width="${iconWidth}" height="${iconHeight}">
-                    <h3 class="job__title">${title}</h3>
-                    <p class="job__description">${description}</p>
-                </li>
+                <a class="job__card" href="#">
+                    <span class="card__icon">
+                        <img src="${imageUrlUrl}" alt="${iconAlt}" width="${iconWidth}" height="${iconHeight}">
+                    </span>
+                    <h3 class="card__title">${title}</h3>
+                    <p class="card__description">${description}</p>
+                </a>
             `;
+
             return card;
-        };
+        }
+
         // Загрузка данных с сервера
         fetch(apiUrl)
-            .then((response) => response.json())
-            .then((data) => {
+            .then(response => response.json())
+            .then(data => {
                 console.log(data); // Данные
-                console.log(typeof data); // Тип полученных данных
- 
-                data.forEach((item) => {
-                    const cardElement = createCard(
-                        item.image,
-                        item.iconAlt,
-                        item.iconWidth,
-                        item.iconHeight,
-                        item.title,
-                        item.description
-                    );
-                    cardList.insertAdjacentHTML("beforeend", cardElement);
+                console.log(typeof (data)); // Тип полученных данных
+
+                // for (const item in data) {
+                //     const card = data[item];
+
+                //     const cardElement = createCard(card.link, card.icon, card.iconAlt, card.iconWidth, card.iconHeight, card.title, card.description);
+                //     cardList.insertAdjacentHTML('beforeend', cardElement);
+                // }
+
+                data.forEach(item => {
+                    const cardElement = createCard(item.link, item.icon, item.iconAlt, item.iconWidth, item.iconHeight, item.title, item.description);
+                    cardList.insertAdjacentHTML('beforeend', cardElement);
                 });
             })
-            .catch((error) => {
-                console.error("Ошибка при загрузке данных:", error);
+            .catch(error => {
+                console.error('Ошибка при загрузке данных:', error);
             });
     }
-});
 
 
