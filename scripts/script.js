@@ -39,138 +39,139 @@ document.addEventListener("DOMContentLoaded", () => {
 
         })
 
-    }
+    };
     
+});
 
-        /* 2. Создание слайдера */
-    let currentIndex = 0; // индекс карточек
-    const slider = document.querySelectorAll(".doctors__card");
-    const prevButton = document.querySelector(".doctors__left");
-    const nextButton = document.querySelector(".doctors__right");
-    const visibleCards = 2; // количество отображаемых карточек
-    updateSlider();
 
-    prevButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = slider.length - visibleCards; //Переход к последним карточкам
-    }
-    updateSlider();
-    });
-    console.log (nextButton);
-    nextButton.addEventListener("click", () => {
-    if (currentIndex < slider.length - visibleCards) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // Переход к началу карточек
-    }
-    updateSlider();
-    });
+/* 2. Создание слайдера */
+let currentIndex = 0; // индекс карточек
+const slider = document.querySelectorAll(".doctors__card");
+const prevButton = document.querySelector(".doctors__left");
+const nextButton = document.querySelector(".doctors__right");
+const visibleCards = 2; // количество отображаемых карточек
+updateSlider();
 
-    function updateSlider() {
-    slider.forEach((item, index) => {
-    // Проверяем, нужно ли показывать карточку
-    if (index >= currentIndex && index < currentIndex + visibleCards) {
-        item.style.display = "block"; // Показываем карточку
-    } else {
-        item.style.display = "none"; // Иначе скрываем карточку
-    }
-    });
-    }
+prevButton.addEventListener("click", () => {
+if (currentIndex > 0) {
+    currentIndex--;
+} else {
+    currentIndex = slider.length - visibleCards; //Переход к последним карточкам
+}
+updateSlider();
+});
+console.log (nextButton);
+nextButton.addEventListener("click", () => {
+if (currentIndex < slider.length - visibleCards) {
+    currentIndex++;
+} else {
+    currentIndex = 0; // Переход к началу карточек
+}
+updateSlider();
+});
 
-    // Получаем элементы DOM
-    const modalOverlay = document.getElementById('modalOverlay');
-    const openModalBtn = document.getElementById('openModalBtn');
-    const closeModalBtn = document.querySelector('.modal-close-btn');
+function updateSlider() {
+slider.forEach((item, index) => {
+// Проверяем, нужно ли показывать карточку
+if (index >= currentIndex && index < currentIndex + visibleCards) {
+    item.style.display = "block"; // Показываем карточку
+} else {
+    item.style.display = "none"; // Иначе скрываем карточку
+}
+});
+}
 
-    // Открытие модального окна
-    openModalBtn.addEventListener('click', () => {
-    modalOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
-    });
+// Получаем элементы DOM
+const modalOverlay = document.getElementById('modalOverlay');
+const openModalBtn = document.getElementById('openModalBtn');
+const closeModalBtn = document.querySelector('.modal-close-btn');
 
-    // Закрытие модального окна
-    function closeModal() {
-    modalOverlay.classList.remove('active');
-    document.body.style.overflow = ''; // Восстанавливаем скролл
-    }
+// Открытие модального окна
+openModalBtn.addEventListener('click', () => {
+modalOverlay.classList.add('active');
+document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+});
 
-    closeModalBtn.addEventListener('click', closeModal);
+// Закрытие модального окна
+function closeModal() {
+modalOverlay.classList.remove('active');
+document.body.style.overflow = ''; // Восстанавливаем скролл
+}
 
-    // Закрытие при клике вне окна
-    modalOverlay.addEventListener('click', (e) => {
-    if (e.target === modalOverlay) closeModal();
-    });
+closeModalBtn.addEventListener('click', closeModal);
 
-    // Закрытие по клавише Escape
-    document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-    closeModal();
-    }
-    });
+// Закрытие при клике вне окна
+modalOverlay.addEventListener('click', (e) => {
+if (e.target === modalOverlay) closeModal();
+});
 
-    /* Динамический вывод карточек тегов */
-    const servicesContainer = document.querySelector(".services");
-    if (servicesContainer) {
-        const dataTitleServices= [
-            "Терапия",
-            "Дерматология",
-            "УЗИ кошек и собак",
-            "Лабораторные исследования",
-            "Рентген",
-            "Стоматология",
-            "Хирургия",
-            "Травматология",
-            "Кардиология",
-            "Онкология",
-            "Офтальмология",
-            "Вакцинация кошек и собак",
-            "Чипирование животных",
-            "Кастрация и стерилизация",
-            "Груминг",
-            "Стационар",
-            "Ритуальные услуги",
-            "Вызов врача на дом",
-        ];
+// Закрытие по клавише Escape
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+closeModal();
+}
+});
 
-        const titleCards = 
-            servicesContainer.querySelectorAll(".services__name");
+/* Динамический вывод карточек тегов */
+const servicesContainer = document.querySelector(".services");
+if (servicesContainer) {
+    const dataTitleServices= [
+        "Терапия",
+        "Дерматология",
+        "УЗИ кошек и собак",
+        "Лабораторные исследования",
+        "Рентген",
+        "Стоматология",
+        "Хирургия",
+        "Травматология",
+        "Кардиология",
+        "Онкология",
+        "Офтальмология",
+        "Вакцинация кошек и собак",
+        "Чипирование животных",
+        "Кастрация и стерилизация",
+        "Груминг",
+        "Стационар",
+        "Ритуальные услуги",
+        "Вызов врача на дом",
+    ];
+
+    const titleCards = 
+        servicesContainer.querySelectorAll(".services__name");
             
-            titleCards.forEach((item, index) => {
-                item.textContent = dataTitleServices[index];
-            });
-    }
-                 
-
-    const scrollUpButton = document.querySelector('.scroll-up');
-
-    if (scrollUpButton) {
-        const windowHeight = document.documentElement.clientHeight; // Определяем высоту видимой части окна браузера
-
-        // Показать кнопку при прокрутке вниз на высоту экрана
-        document.addEventListener('scroll', () => {
-            let scrollPageY = this.scrollY;
-
-            if (scrollPageY >= windowHeight) {
-                scrollUpButton.classList.add('scroll-up--show');
-            } else {
-                scrollUpButton.classList.remove('scroll-up--show');
-            }
+        titleCards.forEach((item, index) => {
+            item.textContent = dataTitleServices[index];
         });
+};
 
-        // Плавная прокрутка наверх при нажатии на кнопку
-        scrollUpButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+const scrollUpButton = document.querySelector('.scroll-up');
+
+if (scrollUpButton) {
+    const windowHeight = document.documentElement.clientHeight; // Определяем высоту видимой части окна браузера
+
+    // Показать кнопку при прокрутке вниз на высоту экрана
+    document.addEventListener('scroll', () => {
+        let scrollPageY = this.scrollY;
+
+        if (scrollPageY >= windowHeight) {
+            scrollUpButton.classList.add('scroll-up--show');
+        } else {
+            scrollUpButton.classList.remove('scroll-up--show');
+        }
+    });
+
+    // Плавная прокрутка наверх при нажатии на кнопку
+    scrollUpButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
+    });
 
-    }
+};
 
-    // Динамический вывод навигационного меню
-    const headerMenu = document.querySelector('.header__menu');
+// Динамический вывод навигационного меню
+const headerMenu = document.querySelector('.header__menu');
     if (headerMenu){
         const headerList = headerMenu.querySelector('.menu')
         const menuData = {
@@ -201,13 +202,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const link = menuData[linkItem];
         const linkIndex = createLink(link.UrlLink, link.title);
         headerList.insertAdjacentHTML ('beforeend', linkIndex);
-        
         }
-    }
-})
+};
 
-    /* Лекция 6 */
-    const cardsContainer = document.querySelector('.job');
+
+/* Лекция 6 */
+const cardsContainer = document.querySelector('data.json');
     if (cardsContainer) {
         const cardList = cardsContainer.querySelector('.job__list');
 
@@ -241,18 +241,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 // for (const item in data) {
                 //     const card = data[item];
 
-                //     const cardElement = createCard(card.link, card.icon, card.iconAlt, card.iconWidth, card.iconHeight, card.title, card.description);
+                //     const cardElement = createCard(card.link, card.icon, card.iconAlt, card.iconWidth, 
+                // card.iconHeight, card.title, card.description);
                 //     cardList.insertAdjacentHTML('beforeend', cardElement);
                 // }
 
                 data.forEach(item => {
-                    const cardElement = createCard(item.link, item.icon, item.iconAlt, item.iconWidth, item.iconHeight, item.title, item.description);
+                    const cardElement = createCard(item.link, item.icon, item.iconAlt, item.iconWidth, 
+                        item.iconHeight, item.title, item.description);
                     cardList.insertAdjacentHTML('beforeend', cardElement);
                 });
             })
             .catch(error => {
                 console.error('Ошибка при загрузке данных:', error);
             });
-    }
+};
 
+const preloader = document.querySelector(".preloader");
+const content = document.querySelector(".content");
+if (preloader && content) {
+    const minLoaderTime = 800; // Минимум 0.8 секунды
+    const startTime = Date.now();
+
+    const hidePreloader = () => {
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, minLoaderTime - elapsed);
+
+        setTimeout(() => {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 300);
+        }, remaining);
+    };
+
+    window.addEventListener('load', hidePreloader);
+    setTimeout(hidePreloader, 3000); // Фолбэк на случай, если load не сработает
+};
 
