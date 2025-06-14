@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title style="color: deepskyblue;">Ветеринарная клиника</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -142,33 +143,35 @@
   <img class="modal_img" src="images/vet.png" alt="" width="450px">
 </section>
 
-            <section class="reviews">
+        <section class="reviews">
                 <h2 class="reviews__title">Отзывы</h2>
-                <div class="reviews__list">
-                    <div class="reviews__card">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
                         <p class="reviews__name">Наталья Михина</p>
                         <p class="reviews__desc">Отличная клиника!!! <br>
-                            Добрые,компетентные, <br> внимательные врачи. <br> Огромная вам благодарность и признательность за профессионализм и любовь к животным. <br> 
-                            Наша немецкая овчарка наблюдается и лечится только у вас.
-                            <br>Спасибо большое за работу.</p>
+                            Добрые,компетентные, внимательные врачи. Огромная вам благодарность и признательность за профессионализм и любовь к животным.
+                            Наша немецкая овчарка наблюдается и лечится только у вас.<br> Cпасибо большое за работу. </p>
                     </div>
-                    <div class="reviews__card">
+                    <div class="swiper-slide">
                     <p class="reviews__name">Михаил Лебедев</p>
-                    <p class="reviews__desc">Принес найденную на улице кошку, 
-                       <br> проконсультировали, кошку взяли в приют.
-                       <br> И через два дня позвонили, сообщили, что ее пристроили, 
+                    <p class="reviews__desc">Принес найденную на улице кошку, проконсультировали,<br>кошку взяли в приют.
+                       <br> И через два дня позвонили, сообщили, что ее пристроили, <br>
                        прислали фотографии с новыми хозяевами. 
                        <br> Огромная благодарность, что с душой подходите к своей работе.</p>
                        </div>
-                       <div class="reviews__card">
+                       <div class="swiper-slide">
                        <p class="reviews__name">Дарья Зайцева</p>
-                    <p class="reviews__desc">Были проездом из другого города, 
-                       <br> срочно потребовалась помощь собаке. 
-                       <br> Очень отзывчивые и доброжелательные работники. <br> Приняли очень быстро, дали рекомендации. 
-                       <br> Большое человеческое спасибо!</p>
+                    <p class="reviews__desc">Были проездом из другого города, срочно потребовалась помощь собаке. 
+                        Очень отзывчивые и доброжелательные работники.<br>Приняли очень быстро, дали рекомендации.<br>
+                        Большое человеческое спасибо!</p>
                     </div>
                 </div>
-            </section>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
             <section class="doctors">
                 <h2 class="doctors__title">Наши врачи</h2>
                 <div class="doctors__list">
@@ -317,6 +320,7 @@
 
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"> </script>
 <script src="scripts/script.js"></script>
 </body>
 </html>

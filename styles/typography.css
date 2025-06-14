@@ -1,0 +1,116 @@
+/* Контейнер-обертка */
+.container {
+    position: relative;
+
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 120px;
+}
+
+/* Заголовки */
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    color: #fdb100;
+}
+
+/* Кнопки */
+.button {
+    min-height: 60px;
+    padding: 12px 20px;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 28px;
+    color: #fdb100;
+
+    border: 1px solid #fdb100;
+    border-radius: 16px;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    transition: background-color 0.4s ease-out, color 0.4s ease-out;
+}
+
+.button:hover,
+.button:focus {
+    color: #ffffff;
+    background-color: #fdb100;
+}
+
+.button--accent {
+    color: #ffffff;
+
+    background-color: #fdb100;
+}
+
+.button--accent:hover,
+.button--accent:focus {
+    color: #fdb100;
+    background-color: #ffffff;
+}
+
+.button--link {
+    width: fit-content;
+    margin: 0 auto;
+
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-underline-offset: 8px;
+
+    border: none;
+    background-color: transparent;
+
+    transition: text-decoration-color 0.3s;
+}
+
+.button--link:hover,
+.button--link:focus {
+    color: #fdb100;
+    background-color: #ffffff;
+
+    text-decoration-color: transparent;
+}
+
+.scroll-up {
+    position: fixed;
+    right: 50px;
+    bottom: -70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+
+    background-color: #fdb100;
+    box-shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    border-radius: 5px;
+    border: none;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 1;
+
+    cursor: pointer;
+
+    transition: background-color 0.4s, bottom 0.4s linear, opacity 0.4s, visibility 0.4s;
+}
+
+.scroll-up:hover,
+.scroll-up:focus {
+    background-color: rgba(253, 177, 0, 0.8);
+}
+
+.scroll-up--show {
+    bottom: 115px;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}

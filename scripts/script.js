@@ -273,3 +273,20 @@ const cardsContainer = document.querySelector('.section__job');
         }, 3000); // Задержка 3 секунды
     }
 
+// Объявляем переменную slider, куда помещаем элемент с классом swiper
+const sliders = document.querySelector ('.swiper');
+// Проверяем существует ли элемент
+    if (sliders) {
+        const swiper1 = new Swiper('.mySwiper', {
+            // Пагинация
+            pagination: {
+                el: '.swiper-pagination',
+                type: "fraction",
+            },
+            // Навигационные стрелки
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    }
