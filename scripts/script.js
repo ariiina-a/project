@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         //
         // Блок-схема: /images/block-schema.jpg
 
-
         const heightHeader = header.offsetHeight;           
         document.addEventListener('scroll', () => {         
             console.log('Страница скролится');
@@ -207,7 +206,7 @@ const headerMenu = document.querySelector('.header__menu');
 
 
 /* Лекция 6 */
-const cardsContainer = document.querySelector('data.json');
+const cardsContainer = document.querySelector('.section__job');
     if (cardsContainer) {
         const cardList = cardsContainer.querySelector('.job__list');
 
@@ -221,9 +220,9 @@ const cardsContainer = document.querySelector('data.json');
             const card = `
                 <a class="job__card" href="#">
                     <span class="card__icon">
-                        <img src="${imageUrlUrl}" alt="${iconAlt}" width="${iconWidth}" height="${iconHeight}">
+                        <img src="${imageUrl}" alt="${iconAlt}" width="${iconWidth}" height="${iconHeight}">
                     </span>
-                    <h3 class="card__title">${title}</h3>
+                    <h2 class="card__title">${title}</h2>
                     <p class="card__description">${description}</p>
                 </a>
             `;
@@ -247,7 +246,7 @@ const cardsContainer = document.querySelector('data.json');
                 // }
 
                 data.forEach(item => {
-                    const cardElement = createCard(item.link, item.icon, item.iconAlt, item.iconWidth, 
+                    const cardElement = createCard(item.image, item.iconAlt, item.iconWidth, 
                         item.iconHeight, item.title, item.description);
                     cardList.insertAdjacentHTML('beforeend', cardElement);
                 });
@@ -257,25 +256,20 @@ const cardsContainer = document.querySelector('data.json');
             });
 };
 
-const preloader = document.querySelector(".preloader");
-const content = document.querySelector(".content");
-if (preloader && content) {
-    const minLoaderTime = 800; // Минимум 0.8 секунды
-    const startTime = Date.now();
-
-    const hidePreloader = () => {
-        const elapsed = Date.now() - startTime;
-        const remaining = Math.max(0, minLoaderTime - elapsed);
-
+// Preloader страницы
+    const preloader = document.querySelector('.preloader');
+    const content = document.querySelector('.content');
+    if (preloader && content) {
         setTimeout(() => {
+            // Скрываем прелоадер
             preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 300);
-        }, remaining);
-    };
+            preloader.style.visibility = 'hidden';
 
-    window.addEventListener('load', hidePreloader);
-    setTimeout(hidePreloader, 3000); // Фолбэк на случай, если load не сработает
-};
+            // Показываем контент
+            content.style.display = 'block';
+
+            // Удаляем элемент из DOM
+            preloader.remove();
+        }, 3000); // Задержка 3 секунды
+    }
 
