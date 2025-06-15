@@ -80,36 +80,161 @@ if (index >= currentIndex && index < currentIndex + visibleCards) {
 });
 }
 
+
 // Получаем элементы DOM
 const modalOverlay = document.getElementById('modalOverlay');
 const openModalBtn = document.getElementById('openModalBtn');
 const closeModalBtn = document.querySelector('.modal-close-btn');
+const formApplication = document.querySelector('.modal__form'); 
+const modalMessage = document.createElement('div'); // Создаем элемент для сообщений
+modalMessage.id = 'form-message';
+formApplication.appendChild(modalMessage);
+const phoneInput = document.getElementById('userPhone'); 
+
+// Маска для телефона
+phoneInput.addEventListener('input', function(e) {
+    // Удаляем все нецифровые символы, кроме +
+    let value = e.target.value.replace(/[^\d+]/g, '');
+    
+    // Обеспечиваем начало с +7
+    if (!value.startsWith('+7')) {
+        if (value.startsWith('7') || value.startsWith('8')) {
+            value = '+7' + value.substring(1); // Преобразуем 7... или 8... в +7...
+        } else {
+            value = '+7' + value; // Добавляем +7 в начало
+        }
+    }
+    
+    // Ограничиваем длину (+7 и 10 цифр)
+    if (value.length > 12) {
+        value = value.substring(0, 12);
+    }
+    
+    // Форматируем номер: +7 (XXX) XXX-XX-XX
+    const digits = value.replace(/\D/g, '').substring(1); // Получаем цифры без +7
+    let formattedValue = '+7';
+    
+    if (digits.length > 0) {
+        formattedValue += ' (' + digits.substring(0, 3);
+        if (digits.length > 3) {
+            formattedValue += ') ' + digits.substring(3, 6);
+        }
+        if (digits.length > 6) {
+            formattedValue += '-' + digits.substring(6, 8);
+        }
+        if (digits.length > 8) {
+            formattedValue += '-' + digits.substring(8, 10);
+        }
+    }
+    
+    e.target.value = formattedValue;
+});
+
+// Защита от удаления +7
+phoneInput.addEventListener('keydown', function(e) {
+    // Запрещаем удаление +7
+    if ((e.key === 'Backspace' || e.key === 'Delete') && 
+        phoneInput.selectionStart <= 2) {
+        e.preventDefault();
+    }
+    
+    // Разрешаем только цифры и управляющие клавиши
+    if (!/\d/.test(e.key) && 
+        !['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'].includes(e.key)) {
+        e.preventDefault();
+    }
+});
+
 
 // Открытие модального окна
 openModalBtn.addEventListener('click', () => {
-modalOverlay.classList.add('active');
-document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    loadFormData(); // Загружаем сохраненные данные при открытии
 });
 
 // Закрытие модального окна
 function closeModal() {
-modalOverlay.classList.remove('active');
-document.body.style.overflow = ''; // Восстанавливаем скролл
-}
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+};
 
 closeModalBtn.addEventListener('click', closeModal);
 
 // Закрытие при клике вне окна
 modalOverlay.addEventListener('click', (e) => {
-if (e.target === modalOverlay) closeModal();
+    if (e.target === modalOverlay) closeModal();
 });
 
 // Закрытие по клавише Escape
 document.addEventListener('keydown', (e) => {
-if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-closeModal();
-}
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+        closeModal();
+    }
 });
+
+// Обработка отправки формы
+if (formApplication) {
+    formApplication.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const username = document.getElementById('userName').value;
+        const tel = document.getElementById('userPhone').value.replace(/\D/g, '');
+        const email = document.getElementById('userEmail').value;
+
+        // Валидация имени
+        if (username.length < 3) {
+            modalMessage.textContent = 'Имя пользователя должно содержать не менее 3 символов';
+            modalMessage.style.color = 'red';
+            return;
+        }
+
+        // Валидация телефона (должен начинаться с 7 и иметь 10 цифр после)
+        if (!tel.startsWith('7') || tel.length !== 11) {
+            modalMessage.textContent = 'Номер должен начинаться с +7 и содержать 10 цифр';
+            modalMessage.style.color = 'red';
+            return;
+        }
+
+        // Валидация email
+        if (!email.includes('@') || !email.includes('.')) {
+            modalMessage.textContent = 'Введите корректный email';
+            modalMessage.style.color = 'red';
+            return;
+        }
+
+        // Сохраняем данные в LocalStorage (телефон сохраняем без маски)
+        localStorage.setItem('userName', username);
+        localStorage.setItem('userPhone', tel);
+        localStorage.setItem('userEmail', email);
+
+        // Успешная отправка
+        modalMessage.textContent = 'Заявка отправлена!';
+        modalMessage.style.color = 'green';
+
+        // Очищаем форму через 2 секунды
+        setTimeout(() => {
+            formApplication.reset();
+            modalMessage.textContent = '';
+            closeModal();
+        }, 2000);
+    });
+};
+
+// Загрузка сохраненных данных из LocalStorage
+function loadFormData() {
+    const savedUsername = localStorage.getItem('userName');
+    const savedTel = localStorage.getItem('userPhone'); // Сохраняем только цифры
+    const savedEmail = localStorage.getItem('userEmail');
+
+    if (savedUsername) document.getElementById('userName').value = savedUsername;
+    if (savedTel) {
+        const digits = savedTel.substring(1); // Убираем первую 7
+        document.getElementById('userPhone').value = `+7 (${digits.substring(0,3)}) ${digits.substring(3,6)}-${digits.substring(6,8)}-${digits.substring(8,10)}`;
+    }
+    if (savedEmail) document.getElementById('userEmail').value = savedEmail;
+};
+
 
 /* Динамический вывод карточек тегов */
 const servicesContainer = document.querySelector(".services");
