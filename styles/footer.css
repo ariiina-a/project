@@ -1,4 +1,14 @@
 .footer {
-    background-color: white;
-    color: rgb(22, 22, 75);
+    background-color: #f8f9fa; /* светлый серый фон */
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #e9ecef;
+    color: #6c757d; /* серый цвет текста */
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer__autor {
+    margin: 0;
+    text-align: center;
 }
