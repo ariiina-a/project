@@ -1,6 +1,6 @@
 [
     {
-        "image": "/images/surgeon.jpg",
+        "image": "images/surgeon.jpg",
         "iconAlt": "Хирург",
         "iconWidth": 250,
         "iconHeight": 150,
@@ -8,7 +8,7 @@
         "description": "Заработная плата от 45 000 тыс.руб."
     },
     {
-        "image": "/images/admin.png",
+        "image":"images/admin.png",
         "iconAlt": "Администратор",
         "iconWidth": 250,
         "iconHeight": 150,
@@ -16,7 +16,7 @@
         "description": "Заработная плата от 25 000 тыс.руб."
     },
     {
-        "image": "/images/assist.png",
+        "image": "images/assist.png",
         "iconAlt": "Ассистент ветеринарного врача",
         "iconWidth": 250,
         "iconHeight": 150,
